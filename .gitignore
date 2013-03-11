@@ -6,6 +6,7 @@ Makefile
 
 # Binaries and symlinks
 *.so
+source/write-data
 
 # debian build files
 debian/*~

@@ -5,7 +5,7 @@
 
 #include "types_serial_utils.h"
 
-namespace zero_cache
+namespace serial_utils
 {
 
 class ProgramOptions

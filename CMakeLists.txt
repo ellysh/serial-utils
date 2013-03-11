@@ -11,11 +11,15 @@ project(serial-utils)
 
 find_package(PkgConfig)
 pkg_check_modules(LIBSERIAL REQUIRED libserial)
+find_package( Boost 1.40 COMPONENTS system program_options REQUIRED )
+include_directories( ${Boost_INCLUDE_DIR} )
 
 set(COMMON_INCLUDE_DIRS
+    ${LIBSERIAL_INCLUDE_DIRS}
     ${PROJECT_SOURCE_DIR}/source)
 
 set(COMMON_LIBDIR
+    ${LIBSERIAL_LIBDIR}
     ${PROJECT_SOURCE_DIR}/source)
 
 # Build type by default is Debug

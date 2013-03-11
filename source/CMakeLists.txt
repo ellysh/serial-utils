@@ -8,7 +8,7 @@ set(write_data_SRCS
 add_executable(write-data ${write_data_SRCS})
 
 if(UNIX)
-    target_link_libraries(write-data)
+    target_link_libraries(write-data serial ${Boost_LIBRARIES})
 endif(UNIX)
 
 install(TARGETS write-data DESTINATION bin)

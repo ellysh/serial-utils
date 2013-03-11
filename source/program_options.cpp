@@ -3,7 +3,7 @@
 #include <algorithm>
 
 using namespace std;
-using namespace zero_cache;
+using namespace serial_utils;
 
 char* ProgramOptions::GetString(const string& option)
 {

@@ -1,21 +1,22 @@
-#include "registrar.h"
-
 #include <iostream>
+#include <libserial/serial_connection.h>
 
 #include "program_options.h"
 
 using namespace std;
-using namespace zero_cache;
+using namespace serial;
+using namespace serial_utils;
 
 void PrintUsage()
 {
-    cout << "Usage: zero_cached [options]" << endl;
+    cout << "Usage: write-data [options]" << endl;
     cout << "Options:" << endl;
-    cout << "\t-c CONNECTION\t\tSet connection string" << endl;
-    cout << "\t-l FILE\t\t\tSet log file name" << endl;
-    cout << "\t-s SIZE\t\t\tSet size of the input queue" << endl;
-    cout << "\t-f\t\t\tFast mode with publisher-subscriber socket type using" << endl;
+    cout << "\t-f FILE\t\tDevice file of the serial port" << endl;
+    cout << "\t-b BAUDRATE\t\tBaud rate value" << endl;
+    cout << "\t-d DATA\t\tString with data to write" << endl;
     cout << "\t-h\t\t\tPrint option help" << endl;
+    cout << "Example to write three bytes 0x01, 0xA0 and 0xFF:" << endl;
+    cout << "\twrite-data -f /dev/ttyS0 -b 57600 -d 01A0FF" << endl;
 }
 
 int main(int argc, char *argv[])
@@ -28,27 +29,19 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    string log_file = "";
-    if ( options.IsOptionExist("-l") )
-        log_file = options.GetString("-l");
-
-    string connection = "tcp://*:5570";
-    if ( options.IsOptionExist("-c") )
-        connection = options.GetString("-c");
-
-    SocketType type = kDealer;
+    string dev_file = "";
     if ( options.IsOptionExist("-f") )
-        type = kPubSub;
+        dev_file = options.GetString("-f");
 
-    Registrar registrar(log_file.c_str(), connection, type);
+    int baud_rate;
+    if ( options.IsOptionExist("-b") )
+        baud_rate = options.GetInt("-b");
 
-    if ( options.IsOptionExist("-s") )
-        registrar.SetQueueSize(options.GetInt("-s"));
+    SerialConnection connection(dev_file, baud_rate);
 
-    if ( options.IsOptionExist("-k") )
-        registrar.SetKeyLimit(options.GetInt("-k"));
+    /* FIXME: Implement the data string parsing to ByteArray */
 
-    registrar.Start();
+    /* FIXME: Send data to the port */
 
     return 0;
 }
