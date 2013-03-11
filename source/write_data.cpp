@@ -12,11 +12,11 @@ void PrintUsage()
     cout << "Usage: write-data [options]" << endl;
     cout << "Options:" << endl;
     cout << "\t-f FILE\t\tDevice file of the serial port" << endl;
-    cout << "\t-b BAUDRATE\t\tBaud rate value" << endl;
+    cout << "\t-b BAUDRATE\tBaud rate value" << endl;
     cout << "\t-d DATA\t\tString with data to write" << endl;
-    cout << "\t-h\t\t\tPrint option help" << endl;
+    cout << "\t-h\t\tPrint option help" << endl << endl;
     cout << "Example to write three bytes 0x01, 0xA0 and 0xFF:" << endl;
-    cout << "\twrite-data -f /dev/ttyS0 -b 57600 -d 01A0FF" << endl;
+    cout << "\twrite-data -f /dev/ttyS0 -b 57600 -d 01A0FF" << endl << endl;
 }
 
 int main(int argc, char *argv[])

@@ -2,6 +2,7 @@ include_directories(${COMMON_INCLUDE_DIRS})
 link_directories(${COMMON_LIBDIR})
 
 set(write_data_SRCS
+    data_parser.cpp
     program_options.cpp
     write_data.cpp)
 
