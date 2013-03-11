@@ -1,0 +1,24 @@
+# CMake temporary files
+*.cmake
+CMakeFiles
+CMakeCache.txt
+Makefile
+
+# Binaries and symlinks
+*.so
+
+# debian build files
+debian/*~
+debian/buildroot/
+debian/*.debhelper
+debian/*.debhelper.log
+debian/*.substvars
+debian/pui-core/
+debian/pui-display/
+debian/pui-keyboard/
+install_manifest.txt
+*.1
+bin/deb/
+build-stamp
+configure-stamp
+debian/files
