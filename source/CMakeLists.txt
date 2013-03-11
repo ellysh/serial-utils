@@ -13,3 +13,15 @@ if(UNIX)
 endif(UNIX)
 
 install(TARGETS write-data DESTINATION bin)
+
+set(read_data_SRCS
+    program_options.cpp
+    read_data.cpp)
+
+add_executable(read-data ${read_data_SRCS})
+
+if(UNIX)
+    target_link_libraries(read-data serial ${Boost_LIBRARIES})
+endif(UNIX)
+
+install(TARGETS read-data DESTINATION bin)
