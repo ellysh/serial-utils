@@ -2,6 +2,7 @@
 #include <libserial/serial_connection.h>
 
 #include "program_options.h"
+#include "data_parser.h"
 
 using namespace std;
 using namespace serial;
@@ -17,31 +18,41 @@ void PrintUsage()
     cout << "\t-h\t\tPrint option help" << endl << endl;
     cout << "Example to write three bytes 0x01, 0xA0 and 0xFF:" << endl;
     cout << "\twrite-data -f /dev/ttyS0 -b 57600 -d 01A0FF" << endl << endl;
+
+    exit(0);
 }
+
 
 int main(int argc, char *argv[])
 {
     ProgramOptions options(argv, argv+argc);
 
     if ( options.IsOptionExist("-h") )
-    {
         PrintUsage();
-        return 1;
-    }
 
     string dev_file = "";
     if ( options.IsOptionExist("-f") )
         dev_file = options.GetString("-f");
+    else
+        PrintUsage();
 
     int baud_rate;
     if ( options.IsOptionExist("-b") )
         baud_rate = options.GetInt("-b");
+    else
+        PrintUsage();
+
+    string data;
+    if ( options.IsOptionExist("-d") )
+        data =  options.GetString("-d");
+    else
+        PrintUsage();
 
     SerialConnection connection(dev_file, baud_rate);
 
-    /* FIXME: Implement the data string parsing to ByteArray */
+    ByteArray array = DataParser::StringToArray(data);
 
-    /* FIXME: Send data to the port */
+    connection.SendRequest(array);
 
     return 0;
 }
