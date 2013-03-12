@@ -10,8 +10,10 @@ BUILDING
 --------
 
 You need the CMake build system, C++ compiler, libserial and system component of the Boost library to build this software.
-This is link to libserial library:
-    https://github.com/ellysh/libserial
+This is link to libserial library:<br/>
+https://github.com/ellysh/libserial
+
+There are steps to build serial-utils:
 
 1. Generate makefiles with CMake build system.<br/>
 Type one of these commands to build debug or release versions of the zero-cache:
