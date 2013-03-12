@@ -41,3 +41,17 @@ if(UNIX)
 endif(UNIX)
 
 install(TARGETS read-async DESTINATION /usr/bin)
+
+
+set(write_read_SRCS
+    data_parser.cpp
+    program_options.cpp
+    write_read.cpp)
+
+add_executable(write-read ${write_read_SRCS})
+
+if(UNIX)
+    target_link_libraries(write-read serial ${Boost_LIBRARIES})
+endif(UNIX)
+
+install(TARGETS write-read DESTINATION /usr/bin)
