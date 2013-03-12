@@ -18,7 +18,7 @@ void PrintUsage()
     cout << "\t-s SIZE\t\tSize of reading data" << endl;
     cout << "\t-h\t\tPrint option help" << endl << endl;
     cout << "Example to write three bytes and read 1 byte answer:" << endl;
-    cout << "\twrite-data -f /dev/ttyS0 -b 57600 -d 01A0FF -s 1" << endl << endl;
+    cout << "\twrite-read -f /dev/ttyS0 -b 57600 -d 01A0FF -s 1" << endl << endl;
 
     exit(0);
 }

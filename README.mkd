@@ -42,8 +42,59 @@ Another way is installing with Makefile default mechanism:
 
     $ make install
 
+USAGE
+-----
+
+**write-data** - this is utility to send data through the serial port.
+
+Usage: write-data [options]<br/>
+Options:<br/>
+    -f FILE     Device file of the serial port<br/>
+    -b BAUDRATE Baud rate value<br/>
+    -d DATA     String with data to write<br/>
+    -h      Print option help
+
+Example:<br/>
+    $ write-data -f /dev/ttyS0 -b 57600 -d 01A0FF
+
+**read-data** - this is utility to receive data from the serial port.
+
+Usage: read-data [options]<br/>
+Options:<br/>
+    -f FILE     Device file of the serial port<br/>
+    -b BAUDRATE Baud rate value<br/>
+    -s SIZE     Size of reading data<br/>
+    -h      Print option help
+
+Example:<br/>
+    $ read-data -f /dev/ttyS0 -b 57600 -s 3
+
+**write-read** - this is utility to send data and wait for the answer.
+
+Usage: write-read [options]<br/>
+Options:<br/>
+    -f FILE     Device file of the serial port<br/>
+    -b BAUDRATE Baud rate value<br/>
+    -d DATA     String with data to write<br/>
+    -s SIZE     Size of reading data<br/>
+    -h      Print option help
+
+Example:<br/>
+    $ write-read -f /dev/ttyS0 -b 57600 -d 01A0FF -s 1
+
+**read-async** - this is utility to receive data from the serial port in the asynchronous mode.
+
+Usage: read-async [options]<br/>
+Options:<br/>
+    -f FILE     Device file of the serial port<br/>
+    -b BAUDRATE Baud rate value<br/>
+    -h      Print option help
+
+Example:<br/>
+    read-async -f /dev/ttyS0 -b 57600
+
 COPYING
 -------
 
-Free use of this software is granted under the terms of the GNU Lesser General
-Public License (LGPL). For details see the file `LICENSE` included with the zero-cache distribution.
+Free use of this software is granted under the terms of the GNU General
+Public License (GPL). For details see the file `LICENSE` included with the serial-utils distribution.
