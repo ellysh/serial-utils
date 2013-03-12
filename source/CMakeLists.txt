@@ -27,3 +27,17 @@ if(UNIX)
 endif(UNIX)
 
 install(TARGETS read-data DESTINATION /usr/bin)
+
+
+set(read_async_SRCS
+    data_parser.cpp
+    program_options.cpp
+    read_async.cpp)
+
+add_executable(read-async ${read_async_SRCS})
+
+if(UNIX)
+    target_link_libraries(read-async serial ${Boost_LIBRARIES})
+endif(UNIX)
+
+install(TARGETS read-async DESTINATION /usr/bin)

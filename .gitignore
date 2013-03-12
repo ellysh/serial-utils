@@ -8,6 +8,7 @@ Makefile
 *.so
 source/write-data
 source/read-data
+source/read-async
 
 # debian build files
 debian/*~
