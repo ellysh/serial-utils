@@ -11,7 +11,7 @@ project(serial-utils)
 
 find_package(PkgConfig)
 pkg_check_modules(LIBSERIAL REQUIRED libserial)
-find_package( Boost 1.40 COMPONENTS system program_options REQUIRED )
+find_package( Boost 1.40 COMPONENTS system REQUIRED )
 include_directories( ${Boost_INCLUDE_DIR} )
 
 set(COMMON_INCLUDE_DIRS

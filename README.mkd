@@ -9,7 +9,9 @@ Serial-utils is package of utilities for working with the serial port.
 BUILDING
 --------
 
-You need the CMake build system and C++ compiler to build this software.
+You need the CMake build system, C++ compiler, libserial and system component of the Boost library to build this software.
+This is link to libserial library:
+    https://github.com/ellysh/libserial
 
 1. Generate makefiles with CMake build system.<br/>
 Type one of these commands to build debug or release versions of the zero-cache:

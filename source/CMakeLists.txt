@@ -12,7 +12,7 @@ if(UNIX)
     target_link_libraries(write-data serial ${Boost_LIBRARIES})
 endif(UNIX)
 
-install(TARGETS write-data DESTINATION bin)
+install(TARGETS write-data DESTINATION /usr/bin)
 
 
 set(read_data_SRCS
@@ -26,4 +26,4 @@ if(UNIX)
     target_link_libraries(read-data serial ${Boost_LIBRARIES})
 endif(UNIX)
 
-install(TARGETS read-data DESTINATION bin)
+install(TARGETS read-data DESTINATION /usr/bin)
