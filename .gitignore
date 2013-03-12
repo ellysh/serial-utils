@@ -15,9 +15,7 @@ debian/buildroot/
 debian/*.debhelper
 debian/*.debhelper.log
 debian/*.substvars
-debian/pui-core/
-debian/pui-display/
-debian/pui-keyboard/
+debian/serial-utils
 install_manifest.txt
 *.1
 bin/deb/

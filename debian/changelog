@@ -1,18 +1,5 @@
-libserial (1.2) precise; urgency=low
-
-  * Remove the unused class
-  * Refactoring of the source code
-
- -- Ilya Shpigor <petrsum@gmail.com>  Mon, 11 Mar 2013 14:42:32 +0400
-
-libserial (1.1) maverick; urgency=low
-
-  * Add the SerialServel class with the async exchange implementation
-
- -- Ilya Shpigor <petrsum@gmail.com>  Fri, 04 May 2012 11:36:21 +0400
-
-libserial (1.0) stable; urgency=low
+serial-utils (0.1) precise; urgency=low
 
   * First package version
 
- -- Ilya Shpigor <petrsum@gmail.com>  Fri, 13 Apr 2012 10:08:18 +0300
+ -- Ilya Shpigor <petrsum@gmail.com>  Tue, 12 Mar 2013 09:55:51 +0400
