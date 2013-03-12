@@ -1,3 +1,10 @@
+serial-utils (0.2) precise; urgency=low
+
+  * Add the `read-async` utility
+  * Add the `write-read` utility
+
+ -- Ilya Shpigor <petrsum@gmail.com>  Tue, 12 Mar 2013 11:52:38 +0400
+
 serial-utils (0.1) precise; urgency=low
 
   * First package version

@@ -1,2 +1,6 @@
+* serial-utils 0.2
+	- Add the `read-async` utility
+	- Add the `write-read` utility
+
 * serial-utils 0.1
 	- Base implementation of the utilities
