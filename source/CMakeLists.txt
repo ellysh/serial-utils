@@ -14,7 +14,9 @@ endif(UNIX)
 
 install(TARGETS write-data DESTINATION bin)
 
+
 set(read_data_SRCS
+    data_parser.cpp
     program_options.cpp
     read_data.cpp)
 

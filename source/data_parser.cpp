@@ -1,22 +1,13 @@
 #include "data_parser.h"
 
 #include <sstream>
+#include <iostream>
 
 using namespace std;
 using namespace serial;
 using namespace serial_utils;
 
-Byte DataParser::StringToByte(string input)
-{
-    int result;
-    stringstream stream;
-    stream << hex << input;
-    stream >> result;
-
-    return result;
-}
-
-ByteArray DataParser::StringToArray(string input)
+ByteArray DataParser::StringToArray(const string input)
 {
     if ( input.empty() )
         return ByteArray();
@@ -34,4 +25,24 @@ ByteArray DataParser::StringToArray(string input)
     }
 
     return result;
+}
+
+Byte DataParser::StringToByte(const string input)
+{
+    int result;
+    stringstream stream;
+    stream << hex << input;
+    stream >> result;
+
+    return result;
+}
+
+void DataParser::PrintArray(const ByteArray input)
+{
+    for ( int i = 0; i < input.size(); i++ )
+    {
+        cout << hex << (int)input[i] << " ";
+    }
+
+    cout << endl;
 }

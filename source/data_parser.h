@@ -11,8 +11,11 @@ namespace serial_utils
 class DataParser
 {
 public:
-    static serial::Byte StringToByte(std::string input);
-    static serial::ByteArray StringToArray(std::string input);
+    static serial::ByteArray StringToArray(const std::string input);
+    static void PrintArray(const serial::ByteArray input);
+
+private:
+    static serial::Byte StringToByte(const std::string input);
 };
 
 }
