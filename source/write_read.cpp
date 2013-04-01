@@ -15,7 +15,6 @@ void PrintUsage()
     cout << "\t-f FILE\t\tDevice file of the serial port" << endl;
     cout << "\t-b BAUDRATE\tBaud rate value" << endl;
     cout << "\t-d DATA\t\tString with data to write" << endl;
-    cout << "\t-s SIZE\t\tSize of reading data" << endl;
     cout << "\t-h\t\tPrint option help" << endl << endl;
     cout << "Example to write three bytes and read 1 byte answer:" << endl;
     cout << "\twrite-read -f /dev/ttyS0 -b 57600 -d 01A0FF -s 1" << endl << endl;
@@ -49,18 +48,12 @@ int main(int argc, char *argv[])
     else
         PrintUsage();
 
-    int size;
-    if ( options.IsOptionExist("-s") )
-        size =  options.GetInt("-s");
-    else
-        PrintUsage();
-
     SerialConnection connection(dev_file, baud_rate);
 
     ByteArray array = DataParser::StringToArray(data);
     connection.SendData(array);
 
-    array = connection.ReceiveData(size);
+    array = connection.ReceiveData(kMaxBufferSize);
     DataParser::PrintArray(array);
 
     return 0;
