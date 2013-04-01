@@ -1,3 +1,7 @@
+* serial-utils 1.0
+	- Fixes according to new libserial API
+	- Use maximum buffer value instead the options of utilities
+
 * serial-utils 0.2
 	- Add the `read-async` utility
 	- Add the `write-read` utility

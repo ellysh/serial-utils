@@ -1,4 +1,4 @@
-Serial-utils 0.2 version
+Serial-utils 1.0 version
 ========================
 
 INTRODUCTION

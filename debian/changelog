@@ -1,3 +1,10 @@
+serial-utils (1.0) precise; urgency=low
+
+  * Fixes according to new libserial API
+  * Use maximum buffer value instead the options of utilities
+
+ -- Ilya Shpigor <petrsum@gmail.com>  Mon, 01 Apr 2013 11:22:44 +0400
+
 serial-utils (0.2) precise; urgency=low
 
   * Add the `read-async` utility
