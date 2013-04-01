@@ -1,10 +1,10 @@
-Serial-utils 1.0 version
+Serial Utils 1.0 version
 ========================
 
 INTRODUCTION
 ------------
 
-Serial-utils is package of utilities for working with the serial port.
+Serial Utils is package of utilities for working with the serial port.
 
 BUILDING
 --------
@@ -16,7 +16,7 @@ https://github.com/ellysh/libserial
 There are steps to build serial-utils:
 
 1. Generate makefiles with CMake build system.<br/>
-Type one of these commands to build debug or release versions of the zero-cache:
+Type one of these commands to build debug or release versions of the Serial Utils:
 
     $ cmake -D CMAKE_BUILD_TYPE=Debug CMakeLists.txt
 
