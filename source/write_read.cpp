@@ -58,9 +58,9 @@ int main(int argc, char *argv[])
     SerialConnection connection(dev_file, baud_rate);
 
     ByteArray array = DataParser::StringToArray(data);
-    connection.SendRequest(array);
+    connection.SendData(array);
 
-    array = connection.ReceiveAnswer(size);
+    array = connection.ReceiveData(size);
     DataParser::PrintArray(array);
 
     return 0;

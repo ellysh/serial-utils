@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 
     ByteArray array = DataParser::StringToArray(data);
 
-    connection.SendRequest(array);
+    connection.SendData(array);
 
     return 0;
 }

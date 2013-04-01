@@ -22,7 +22,6 @@ void PrintUsage()
     exit(0);
 }
 
-
 int main(int argc, char *argv[])
 {
     ProgramOptions options(argv, argv+argc);
@@ -53,7 +52,7 @@ int main(int argc, char *argv[])
     ByteArray array;
     while (true)
     {
-        array = connection.ReceiveAnswer(size);
+        array = connection.ReceiveData(size);
 
         DataParser::PrintArray(array);
     }
