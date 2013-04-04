@@ -23,27 +23,27 @@ void PrintUsage()
 }
 
 
-int main(int argc, char *argv[])
+int main(int argc, const char *argv[])
 {
     ProgramOptions options(argv, argv+argc);
 
-    if ( options.IsOptionExist("-h") )
+    if ( options.IsExist("-h") )
         PrintUsage();
 
     string dev_file = "";
-    if ( options.IsOptionExist("-f") )
+    if ( options.IsExist("-f") )
         dev_file = options.GetString("-f");
     else
         PrintUsage();
 
     int baud_rate;
-    if ( options.IsOptionExist("-b") )
+    if ( options.IsExist("-b") )
         baud_rate = options.GetInt("-b");
     else
         PrintUsage();
 
     string data;
-    if ( options.IsOptionExist("-d") )
+    if ( options.IsExist("-d") )
         data =  options.GetString("-d");
     else
         PrintUsage();

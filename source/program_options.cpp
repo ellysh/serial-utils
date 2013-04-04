@@ -5,24 +5,24 @@
 using namespace std;
 using namespace serial_utils;
 
-char* ProgramOptions::GetString(const string& option)
+const char* ProgramOptions::GetString(const string& option) const
 {
-    char ** itr = find(begin_, end_, option);
+    const char** itr = find(begin_, end_, option);
 
     if ( (itr != end_) && (++itr != end_) )
         return *itr;
     else
-        return 0;
+        return "";
 }
 
-int ProgramOptions::GetInt(const string& option)
+int ProgramOptions::GetInt(const string& option) const
 {
-    char* value = GetString(option);
+    const char* value = GetString(option);
 
     return atoi(value);
 }
 
-bool ProgramOptions::IsOptionExist(const string& option)
+bool ProgramOptions::IsExist(const string& option) const
 {
     return find(begin_, end_, option) != end_;
 }

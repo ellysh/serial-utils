@@ -11,15 +11,15 @@ namespace serial_utils
 class ProgramOptions
 {
 public:
-    ProgramOptions(char** begin, char** end) : begin_(begin), end_(end) {};
+    ProgramOptions(const char** begin, const char** end) : begin_(begin), end_(end) {};
 
-    char* GetString(const std::string& option);
-    int GetInt(const std::string& option);
-    bool IsOptionExist(const std::string& option);
+    const char* GetString(const std::string& option) const;
+    int GetInt(const std::string& option) const;
+    bool IsExist(const std::string& option) const;
 
 private:
-    char** begin_;
-    char** end_;
+    const char** begin_;
+    const char** end_;
 
     DISALLOW_COPY_AND_ASSIGN(ProgramOptions)
 };
